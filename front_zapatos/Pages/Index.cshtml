@@ -1,0 +1,60 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Sistema de zapatos";
+}
+<div class="container py-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+        <div><h1 class="fw-bold">Sistema de zapatos</h1><p class="text-muted mb-0">Administración de inventario, clientes y ventas</p></div>
+        <span id="apiStatus" class="badge text-bg-secondary">Verificando API...</span>
+    </div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tabZapatos" type="button">Zapatos</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabClientes" type="button">Clientes</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabVentas" type="button">Ventas</button></li>
+    </ul>
+    <div class="tab-content border border-top-0 rounded-bottom p-3">
+        <section class="tab-pane fade show active" id="tabZapatos">
+            <h2 class="h4">Registrar zapato</h2>
+            <form id="formZapato" class="row g-2 mb-3">
+                <div class="col-md-3"><label class="form-label">Código</label><input class="form-control" name="codigo" required /></div>
+                <div class="col-md-3"><label class="form-label">Marca</label><input class="form-control" name="marca" required /></div>
+                <div class="col-md-2"><label class="form-label">Talla</label><input class="form-control" name="talla" type="number" min="1" required /></div>
+                <div class="col-md-2"><label class="form-label">Precio</label><input class="form-control" name="precio" type="number" min="0" step=".01" required /></div>
+                <div class="col-md-2 d-flex align-items-end"><button class="btn btn-primary w-100">Guardar</button></div>
+            </form>
+            <button class="btn btn-outline-secondary btn-sm mb-2" onclick="cargar('Zapatos')">Actualizar</button>
+            <div class="table-responsive"><table class="table table-striped"><thead><tr><th>Id</th><th>Código</th><th>Marca</th><th>Talla</th><th>Precio</th><th></th></tr></thead><tbody id="listaZapatos"></tbody></table></div>
+        </section>
+        <section class="tab-pane fade" id="tabClientes">
+            <h2 class="h4">Registrar cliente</h2>
+            <form id="formCliente" class="row g-2 mb-3">
+                <div class="col-md-2"><label class="form-label">Documento</label><input class="form-control" name="documento" required /></div>
+                <div class="col-md-3"><label class="form-label">Nombre</label><input class="form-control" name="nombre" required /></div>
+                <div class="col-md-2"><label class="form-label">Teléfono</label><input class="form-control" name="telefono" required /></div>
+                <div class="col-md-3"><label class="form-label">Correo</label><input class="form-control" name="correo" type="email" required /></div>
+                <div class="col-md-2 d-flex align-items-end"><button class="btn btn-primary w-100">Guardar</button></div>
+            </form>
+            <button class="btn btn-outline-secondary btn-sm mb-2" onclick="cargar('Clientes')">Actualizar</button>
+            <div class="table-responsive"><table class="table table-striped"><thead><tr><th>Id</th><th>Documento</th><th>Nombre</th><th>Teléfono</th><th>Correo</th><th></th></tr></thead><tbody id="listaClientes"></tbody></table></div>
+        </section>
+        <section class="tab-pane fade" id="tabVentas">
+            <h2 class="h4">Registrar venta</h2>
+            <form id="formVenta" class="row g-2 mb-3">
+                <div class="col-md-3"><label class="form-label">Código del zapato</label><input class="form-control" name="codigoZapato" required /></div>
+                <div class="col-md-3"><label class="form-label">Documento del cliente</label><input class="form-control" name="documentoCliente" required /></div>
+                <div class="col-md-2"><label class="form-label">Fecha</label><input class="form-control" name="fecha" type="date" /></div>
+                <div class="col-md-2"><label class="form-label">Cantidad</label><input class="form-control" name="cantidad" type="number" min="1" required /></div>
+                <div class="col-md-2 d-flex align-items-end"><button class="btn btn-primary w-100">Registrar</button></div>
+            </form>
+            <div id="resultadoVenta" class="alert alert-info d-none"></div>
+            <button class="btn btn-outline-secondary btn-sm mb-2" onclick="cargar('Ventas')">Actualizar</button>
+            <div class="table-responsive"><table class="table table-striped"><thead><tr><th>Id</th><th>Código zapato</th><th>Documento cliente</th><th>Fecha</th><th>Cantidad</th></tr></thead><tbody id="listaVentas"></tbody></table></div>
+            <p class="small text-muted">Descuentos: más de 4 pares = 14%; enero/febrero = 8,4%; noviembre/diciembre = 5%. Se aplica una sola regla, en ese orden de prioridad.</p>
+        </section>
+    </div>
+    <div id="mensaje" class="mt-3" role="status"></div>
+</div>
+@section Scripts {
+<script src="~/js/zapatos.js" asp-append-version="true"></script>
+}

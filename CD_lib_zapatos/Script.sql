@@ -1,0 +1,25 @@
+/*CREATE DATABASE CD_lib_zapatos;
+GO
+USE CD_lib_zapatos;
+GO
+CREATE TABLE Zapatos (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Codigo NVARCHAR(30) NOT NULL UNIQUE,
+    Marca NVARCHAR(60) NOT NULL,
+    Talla INT NOT NULL,
+    Precio DECIMAL(12,2) NOT NULL
+);
+CREATE TABLE Clientes (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Documento NVARCHAR(30) NOT NULL UNIQUE,
+    Nombre NVARCHAR(100) NOT NULL,
+    Telefono NVARCHAR(25) NOT NULL,
+    Correo NVARCHAR(120) NOT NULL
+);
+CREATE TABLE Ventas (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    CodigoZapato NVARCHAR(30) NOT NULL,
+    DocumentoCliente NVARCHAR(30) NOT NULL,
+    Fecha DATETIME2 NOT NULL,
+    Cantidad INT NOT NULL
+);*/

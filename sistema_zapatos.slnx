@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="CD_lib_zapatos/CD_lib_zapatos.csproj" />
+  <Project Path="front_zapatos/front_zapatos.csproj" />
+  <Project Path="presentaciones_zapatos/presentaciones_zapatos.csproj" />
+  <Project Path="pruebas_zapatos/pruebas_zapatos.csproj" />
+  <Project Path="servicio_zapatos/servicio_zapatos.csproj" />
+</Solution>

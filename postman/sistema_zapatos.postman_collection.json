@@ -1,0 +1,440 @@
+{
+  "info": {
+    "name": "sistema_zapatos - API",
+    "description": "Pruebas CRUD para Zapatos, Clientes y Ventas. Inicia servicio_zapatos en http://localhost:5209 antes de ejecutar.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Servicio",
+      "item": [
+        {
+          "name": "Verificar API",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Zapatos",
+      "item": [
+        {
+          "name": "Consultar zapatos",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Zapatos/Consultar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Zapatos",
+                "Consultar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Insertar zapato",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Zapatos/Insertar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Zapatos",
+                "Insertar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 0,\n  \"codigo\": \"ZAP-001\",\n  \"marca\": \"Nike\",\n  \"talla\": 38,\n  \"precio\": 189900\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Actualizar zapato",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Zapatos/Actualizar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Zapatos",
+                "Actualizar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"codigo\": \"ZAP-001\",\n  \"marca\": \"Nike\",\n  \"talla\": 39,\n  \"precio\": 199900\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Eliminar zapato (id 1)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/Zapatos/Borrar/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Zapatos",
+                "Borrar",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Clientes",
+      "item": [
+        {
+          "name": "Consultar clientes",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Clientes/Consultar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Clientes",
+                "Consultar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Insertar cliente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Clientes/Insertar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Clientes",
+                "Insertar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 0,\n  \"documento\": \"100200300\",\n  \"nombre\": \"Ana Pérez\",\n  \"telefono\": \"3001234567\",\n  \"correo\": \"ana@example.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Actualizar cliente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Clientes/Actualizar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Clientes",
+                "Actualizar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"documento\": \"100200300\",\n  \"nombre\": \"Ana Pérez\",\n  \"telefono\": \"3001234567\",\n  \"correo\": \"ana.perez@example.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Eliminar cliente (id 1)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/Clientes/Borrar/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Clientes",
+                "Borrar",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ventas",
+      "item": [
+        {
+          "name": "Consultar ventas",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Ventas/Consultar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Ventas",
+                "Consultar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Registrar venta - más de 4 pares (14%)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Ventas/Insertar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Ventas",
+                "Insertar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 0,\n  \"codigoZapato\": \"ZAP-001\",\n  \"documentoCliente\": \"100200300\",\n  \"fecha\": \"2026-06-15T12:00:00\",\n  \"cantidad\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Registrar venta - temporada escolar (8.4%)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Ventas/Insertar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Ventas",
+                "Insertar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 0,\n  \"codigoZapato\": \"ZAP-001\",\n  \"documentoCliente\": \"100200300\",\n  \"fecha\": \"2026-01-15T12:00:00\",\n  \"cantidad\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Registrar venta - fin de año (5%)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Ventas/Insertar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Ventas",
+                "Insertar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 0,\n  \"codigoZapato\": \"ZAP-001\",\n  \"documentoCliente\": \"100200300\",\n  \"fecha\": \"2026-11-15T12:00:00\",\n  \"cantidad\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Actualizar venta",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Ventas/Actualizar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Ventas",
+                "Actualizar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"codigoZapato\": \"ZAP-001\",\n  \"documentoCliente\": \"100200300\",\n  \"fecha\": \"2026-06-15T12:00:00\",\n  \"cantidad\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Eliminar venta (id 1)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/Ventas/Borrar/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Ventas",
+                "Borrar",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
